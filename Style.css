@@ -1,1 +1,139 @@
+:root {
+    --primary: #2e7d32; /* Verde Agro */
+    --secondary: #fbc02d; /* Amarelo Sol */
+    --dark: #1b5e20;
+    --light: #f4f7f6;
+    --text: #333;
+    --white: #ffffff;
+}
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navegação */
+.navbar {
+    background: var(--primary);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo { color: white; font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--secondary); }
+
+.nav-links { list-style: none; display: flex; }
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Páginas */
+.page { display: none; padding: 40px 5%; min-height: 80vh; }
+.page.active { display: block; animation: fadeIn 0.5s; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+/* Cards Dashboard */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-left: 8px solid var(--primary);
+}
+
+.stat { font-size: 1.8rem; font-weight: bold; margin: 10px 0; color: var(--primary); }
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.ideal { background: #e8f5e9; color: #2e7d32; }
+
+/* Formulário e Simulador */
+.container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; }
+
+.form-group label { display: block; margin-top: 15px; font-weight: bold; }
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-calc {
+    width: 100%;
+    background: var(--secondary);
+    color: var(--dark);
+    border: none;
+    padding: 18px;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-calc:hover { background: #f9a825; transform: scale(1.02); }
+
+.result-box { margin-top: 30px; padding: 20px; background: #f0f4f8; border-radius: 10px; text-align: center; }
+.regenerative-box {
+    margin-top: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hidden { display: none; }
+
+/* Imagens e Texto */
+.text-content img { width: 100%; border-radius: 10px; margin: 20px 0; }
+.profile { text-align: center; }
+.avatar { font-size: 5rem; margin-bottom: 20px; }
+
+footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; }
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .nav-links { display: none; } /* Em um app real, aqui teria um menu hamburguer */
+    .hero h1 { font-size: 1.5rem; }
+}
