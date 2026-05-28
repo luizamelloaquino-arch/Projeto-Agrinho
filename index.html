@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroDecision 360 | Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <nav class="navbar">
+        <div class="logo">🌱 AgroDecision <span>360</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" onclick="showPage('home')">Início</a></li>
+            <li><a href="#simulador" onclick="showPage('simulador')">Simulador</a></li>
+            <li><a href="#agrinho" onclick="showPage('agrinho')">O Agrinho</a></li>
+            <li><a href="#sobre" onclick="showPage('sobre')">Sobre Mim</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="page active">
+        <header class="hero">
+            <h1>A inteligência do amanhã, na palma da mão hoje.</h1>
+            <p>Monitore clima, finanças e sustentabilidade em um só lugar.</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>☀️ Clima & Ação</h3>
+                <p class="stat">28°C | 45% Umidade</p>
+                <span class="badge ideal">Ideal para Colheita</span>
+                <p class="advice">Aviso: Risco de geada em 48h. Suspenda a adubação.</p>
+            </div>
+            <div class="card">
+                <h3>💰 Financeiro</h3>
+                <p class="stat">65% Insumos</p>
+                <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+                <p class="advice">Saldo estimado positivo para soja.</p>
+            </div>
+            <div class="card">
+                <h3>🚜 Tarefa do Dia</h3>
+                <p class="stat">Gleba Norte</p>
+                <p class="advice">Iniciar aplicação de bioinsumos na área de preservação.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="page">
+        <div class="container">
+            <h2>Simulador de Viabilidade Econômica</h2>
+            <div class="form-group">
+                <label>Custo de Insumos (R$ por ha):</label>
+                <input type="number" id="insumos" placeholder="Ex: 1500">
+                
+                <label>Mão de Obra (R$ por ha):</label>
+                <input type="number" id="maodeobra" placeholder="Ex: 500">
+                
+                <label>Maquinário/Combustível (R$ por ha):</label>
+                <input type="number" id="maquina" placeholder="Ex: 800">
+                
+                <button onclick="calcularCOT()" class="btn-calc">Calcular Custo e ROI</button>
+            </div>
+
+            <div id="resultado" class="result-box hidden">
+                <h3>Resultado do Cálculo (COT)</h3>
+                <p id="valor-cot"></p>
+                <div class="regenerative-box">
+                    <h4>💡 Sugestão Regenerativa</h4>
+                    <p id="sugestao-text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agrinho" class="page">
+        <div class="container text-content">
+            <h2>Concurso Agrinho 2026</h2>
+            <p>O <strong>AgroDecision 360</strong> foi desenvolvido para o tema: <em>"Agro Forte, Futuro Sustentável: Equilíbrio entre Produção e Meio Ambiente"</em>.</p>
+            <p>O projeto visa democratizar a tecnologia no campo, provando que a sustentabilidade e a lucratividade andam de mãos dadas através da análise inteligente de dados.</p>
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Campo Sustentável" class="img-responsive">
+        </div>
+    </section>
+
+    <section id="sobre" class="page">
+        <div class="container text-content">
+            <h2>Sobre o Desenvolvedor</h2>
+            <div class="profile">
+                <div class="avatar">👨‍💻</div>
+                <p>Olá! Sou aluno do <strong>1º Ano do Ensino Médio</strong> e apaixonado pela união entre tecnologia e o agronegócio. Acredito que o futuro da nossa alimentação depende de decisões inteligentes tomadas hoje.</p>
+                <p>Este projeto representa meu esforço em criar uma ferramenta que ajude o pequeno e médio produtor a proteger o solo e garantir a herança das próximas gerações.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AgroDecision 360 - Projeto Agrinho</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
